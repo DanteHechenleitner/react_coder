@@ -1,0 +1,16 @@
+.Nav {
+    background-color: #168DC0;
+    opacity: 60%;
+    font-family: "Overpass", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+}
+ul li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: "Overpass", sans-serif;
+}
