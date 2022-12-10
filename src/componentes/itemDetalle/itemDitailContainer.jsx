@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import Item from "../Item/Item";
-import {SingleItem}  from "../../service/serviceData";
+import {SingleItem}  from "../../service/firestore";
 import ItemDitail from "./itemDitail";
 
 import { useParams } from "react-router-dom";

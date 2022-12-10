@@ -1,11 +1,11 @@
 const productos = [
     {
-        id:1,titulo:"Eunice",
+        id:1,titulo:"Raza Pequeñas",
         precio:374,
         stock:22,
         categoria:"Upper-Crock",
         imagen:"https://http2.mlstatic.com/D_NQ_NP_788850-MLA31983039122_082019-O.webp",
-        descripcion:"Yellow"},
+        descripcion:"perros adultos raza pequeña"},
     {
         id:2,titulo:"Dorri",
         precio:456,
@@ -25,12 +25,12 @@ const productos = [
     },
     {
         id:4,
-        titulo:"Marguerite",
+        titulo:"Adulto",
         precio:690,
         stock:86,
         categoria:"Master-Crock",
         imagen:"https://http2.mlstatic.com/D_NQ_NP_901185-MLA32884475576_112019-O.webp",
-        descripcion:"Blue"
+        descripcion:"Perro Adulto"
     },
     {
         id:5,titulo:"Bernetta",

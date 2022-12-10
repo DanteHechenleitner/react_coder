@@ -17,7 +17,9 @@ function Item(props){
                 <h5 class="card-title" style={styleText}>{props.titulo}</h5>
                 <p class="card-text" style={styleText}>{"$"+props.precio}</p>
                 <Link to={urlDetalle}>
-                   <MyButton className="btn btn-primary"/>
+                    <MyButton className="btn btn-primary">
+                        Ver Más
+                    </MyButton>
                 </Link>
             </div>
         </div>

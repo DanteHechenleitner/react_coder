@@ -1,8 +1,9 @@
 import Item from "./Item"
 import { useState, useEffect } from "react";
-import getItems from "../../service/serviceData";
+import getItems, { getItemsByCategory }  from "../../service/firestore";
 import "./itemList.css"
 import { useParams } from "react-router-dom";
+
 
 function ItemListContainer(){
     const [productos, setProductos] = useState([])
@@ -10,8 +11,13 @@ function ItemListContainer(){
 
 
     async function getItemsAsync(){
-        let respuesta = await getItems(idCategoria);
-        setProductos(respuesta);
+        if(!idCategoria){
+            let respuesta = await getItems();
+            setProductos(respuesta)
+        }else{
+            let respuesta = await getItemsByCategory(idCategoria)
+            setProductos(respuesta)
+        }
     }
 
     useEffect(() => {
@@ -31,7 +37,7 @@ function ItemListContainer(){
                   precio={producto.precio}
                   categoria={producto.categoria}
                   stock={producto.stock}
-                />
+                /> 
             )
         })}
         
@@ -41,5 +47,5 @@ function ItemListContainer(){
     )
 }
 
-export default ItemListContainer
+export default ItemListContainer;
 
