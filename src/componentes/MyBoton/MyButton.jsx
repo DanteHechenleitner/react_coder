@@ -14,7 +14,7 @@ function MyButton(props){
     }
 
     return(
-        <button onClick={props.onTouchButton} className={className} style={{ marginBottom: "10px"}}>
+        <button disabled={props.disabled} onClick={props.onTouchButton} className={className} style={{ marginBottom: "10px"}}>
             {props.children}
         </button>
     )

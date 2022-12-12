@@ -24,7 +24,7 @@ function ItemCount ({ stock, onAddToCart }){
                 </MyButton>
             </div>
             <div>
-                <MyButton onTouchButton={() => onAddToCart(count)} className="btn btn-primary">
+                <MyButton disabled={stock <= 0} onTouchButton={() => onAddToCart(count)} className="btn btn-primary">
                     Agregar al Carrito
                 </MyButton>
             </div>

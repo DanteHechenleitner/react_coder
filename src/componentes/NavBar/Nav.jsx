@@ -25,6 +25,9 @@ function Navbar(){
                         <Link class="nav-link" to="/categoria/Master-Crock">Master Crock</Link>
                     </li>
                     <li class="nav-item">
+                        <Link class="nav-link" to="/categoria/Pedigree">Pedigree</Link>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#"> <Carrito/> </a>
                     </li>
                 </ul>

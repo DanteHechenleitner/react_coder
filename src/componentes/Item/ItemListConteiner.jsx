@@ -1,12 +1,15 @@
-import Item from "./Item"
+//import Item from "./Item"
+import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import getItems, { getItemsByCategory }  from "../../service/firestore";
 import "./itemList.css"
 import { useParams } from "react-router-dom";
 
+import Loader from "../Loaders/Loaders";
+
 
 function ItemListContainer(){
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState(null)
     const { idCategoria } = useParams();
 
 
@@ -24,27 +27,11 @@ function ItemListContainer(){
         getItemsAsync();
     }, [idCategoria])
 
-    return( 
-    <div className="item-list" >
-        {productos.map((producto) =>{
-            return(
-                <Item 
-                  
-                  key={producto.id}
-                  id={producto.id}
-                  imagen={producto.imagen}
-                  titulo={producto.titulo}
-                  precio={producto.precio}
-                  categoria={producto.categoria}
-                  stock={producto.stock}
-                /> 
-            )
-        })}
-        
-   
-        
-    </div>
-    )
+    return (
+        <div className="item-list">
+          {productos ? <ItemList productos={productos} /> : <Loader />}
+        </div>
+    );
 }
 
 export default ItemListContainer;

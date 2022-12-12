@@ -1,16 +1,22 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext"
+import MyButton from "../MyBoton/MyButton";
+import { Link } from "react-router-dom";
 
 function ItemDitail( { productos } ){
     let styleTamaño = { width: 540 }
     const styleText = {color: "black"};
-    const {addToCart} = useContext(cartContext)
+    const [isInCart, setIsInCart] = useState(false);
+    const {addToCart, cart} = useContext(cartContext)
 
     function onAddToCart(count){
-      alert(`Agregaste ${count} items al carrito!`);
+      setIsInCart(count);
       addToCart(productos, count)
     }    
+
+    let itemInContex = cart.find( itemInCar => itemInCar.id === productos.id)
+    let stockDisponible = itemInContex !== undefined ? productos.stock - itemInContex.count : productos.stock
 
     return( 
         <div class="card mb-3" style={styleTamaño}>
@@ -24,10 +30,18 @@ function ItemDitail( { productos } ){
                   <p class="card-text" style={styleText}>Th content. This content is a little bit longer.</p>
                   <p class="card-text" style={styleText}><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-                <ItemCount 
+                {isInCart ? (
+                  <Link to="/cart">
+                    <MyButton className="btn btn-primary">Ir al Carrito</MyButton>
+                  </Link> ) :
+                  (
+                  <ItemCount 
                   onAddToCart={onAddToCart}
-                  stock={productos.stock}
-                />                
+                  stock={stockDisponible}
+                  /> 
+                  )
+                }
+               
               </div>
            </div>
         </div>

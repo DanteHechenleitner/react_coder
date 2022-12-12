@@ -2,6 +2,41 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# ¿Qué es Pet Shop Colitas?
+Es un proyecto muy chiquito de ventas de aliento para perros , mi primer ecommerce para poder ir mejorando
+
+# ¿Qué contiene?
+Contiene un listado de productos donde se puede agregar la descripción del artículo, agregar la cantidad que se desea y generar una solicitud de compra.
+
+# Herramientas utilizadas:
+React Js, JS , CSS, HTML, Sweetalert2, Bootstrap
+
+# Eso es todo?
+La respuesta es no, este proyecto todavía está en producción  la idea es ir mejorandolo más que nada en la parte de CSS y validaciones para poder tener un proyecto lo más real posible.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
